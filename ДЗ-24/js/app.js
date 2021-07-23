@@ -1,19 +1,16 @@
-(function () {
-    let str = prompt ('Введите любое натуральное число', ''); 
+function palindrome(num, count) {
     
-    if (isNaN (str)) {
-        alert ('Вы ввели не число'); 
-        return;
+    count = count || 0;
+  
+    let str = num.toString();
+    let strReverse = str.split("").reverse().join("");
+  
+    if (str === strReverse) {
+      return {
+        result: num,
+        steps: count,
+      };
     }
-    if (parseInt (str) != str || str <= 0) {
-        alert ('Вы ввели не натуральное число'); 
-        return;
-    }
- 
-    var j = 0, le = str.length - 1, pal = true;
-    
-    while (j <= le - j) {pal = pal && (str.charAt (j) == str.charAt (le - j)); j++}
-    
-    alert ('Введённое число ' + str + (pal ? ' ' : ' не ') + 'является палиндромом');
-
-})();
+    return palindrome(num + Number(strReverse), count + 1);
+}
+console.log(palindrome(96));
