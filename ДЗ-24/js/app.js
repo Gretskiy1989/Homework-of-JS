@@ -1,11 +1,16 @@
-"use strict";
-
-//метод Bind своими руками
-
-const auto = {
-    brand: "Mercedes",
-    drive: function () {
-        return `Вас приветствует компания ${this.brand}`;
-    },
-  };
-  alert(auto.drive()); 
+function palindrome(num, count) {
+    
+    count = count || 0;
+  
+    let str = num.toString();
+    let strReverse = str.split("").reverse().join("");
+  
+    if (str === strReverse) {
+      return {
+        result: num,
+        steps: count,
+      };
+    }
+    return palindrome(num + Number(strReverse), count + 1);
+}
+console.log(palindrome(96));
