@@ -190,3 +190,8 @@ body {
 .todo-clear:active {
   opacity: 0.5;
 }
+
+.todo-list .completed {
+  color: #fff;
+  background-color: green;
+}
