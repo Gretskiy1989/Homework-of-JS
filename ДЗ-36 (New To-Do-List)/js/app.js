@@ -26,6 +26,11 @@ let addDeleteEvents = function (element) {
 
 priority.addEventListener('click', (e) => {
   priority.classList.toggle('is-important');
+  if (priority.classList.contains('is-important')) {
+        priority.textContent = 'Важная задача';
+      } else {
+        priority.textContent = 'Обычная задача';
+      }
 });
 
 if(localStorage.todos) {
